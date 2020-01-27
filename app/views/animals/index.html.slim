@@ -1,0 +1,18 @@
+p 
+    = link_to 'Regions', regions_path   
+    br
+    = link_to 'Sighting Reports', sightings_path
+
+h1 Animal Sightings
+p = link_to 'Add new species', new_animal_path
+table
+    tr
+        th
+            strong Species
+
+    - @animals.each do |animal|
+        tr
+            td = animal.species
+            td = link_to 'Sightings (' + animal.sightings.count.to_s + ')', animal_path(animal)
+            td = link_to 'Edit', edit_animal_path(animal)
+            td = link_to 'Remove', animal_path(animal), method: :delete, data: { confirm: 'Are you sure?' }

@@ -1,0 +1,27 @@
+p = link_to 'Go Back', animals_path
+
+h1
+    = @animal.species
+    '   sightings
+
+p = link_to 'Report new sighting', new_sighting_path(animal_id: @animal)
+
+table
+    tr
+        th
+            strong Date
+        th
+            strong Latitude
+        th
+            strong Longitude
+        th
+            strong Region
+    - @animal.sightings.order(:date).each do |sighting|
+        tr
+            td = sighting.date.to_date
+            td = sighting.latitude
+            td = sighting.longitude
+            td = sighting.region.name
+            td = link_to 'View', sighting_path(sighting)
+            td = link_to 'Edit', edit_sighting_path(animal_id: @animal, id: sighting)
+            td = link_to 'Remove', sighting_path(animal_id: @animal, id: sighting), method: :delete, data: { confirm: 'Are you sure?' }

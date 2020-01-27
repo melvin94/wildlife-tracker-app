@@ -1,0 +1,17 @@
+= form_with(scope: @sightings, local: true) do |form|
+    p
+        = form.label :start_date
+        br
+        = form.date_field :start_date, value: params[:start_date]
+    p
+        = form.label :end_date
+        br
+        = form.date_field :end_date, value: params[:end_date]
+    p
+        = form.label :region_id, 'Region'
+        br
+        = form.collection_select :region_id, Region.all, :id, :name, include_blank: true, selected: params[:region_id]
+    p
+        = form.submit 'Filter Reports'
+        br
+        = form.submit 'View All Reports'

@@ -1,0 +1,31 @@
+p = link_to 'Go Back', animals_path
+
+h1 Sighting Reports
+
+h3 Filter by date and/or region
+
+- if params[:filter_error] == "true"
+    'Please select valid inputs for all fields
+
+= render 'filter_form'
+
+table
+    tr
+        th
+            strong Species
+        th
+            strong Date
+        th
+            strong Latitude
+        th
+            strong Longitude
+        th
+            strong Region
+    - @sightings.order(:date).each do |sighting|
+        tr
+            td = sighting.animal.species
+            td = sighting.date.to_date
+            td = sighting.latitude
+            td = sighting.longitude
+            td = sighting.region.name
+            td = link_to 'View', sighting_path(sighting)

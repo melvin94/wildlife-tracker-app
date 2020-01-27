@@ -1,0 +1,13 @@
+p = link_to 'Go Back', :back
+
+'picture of '
+= @sighting.animal.species
+'   ' at region '
+= @sighting.region.name
+'   '
+br
+
+- if @sighting.animal.species == 'Lion'
+    = image_tag "https://cdn.britannica.com/55/2155-050-604F5A4A/lion.jpg"
+- else
+    = image_tag "https://citizen.co.za/wp-content/uploads/2019/10/hippo-sunscreen-744x418.jpg"

@@ -1,0 +1,7 @@
+= form_with(model: @animal, local: true) do |form|
+    p
+        = form.label :species
+        br
+        = form.text_field :species
+    p
+        = form.submit

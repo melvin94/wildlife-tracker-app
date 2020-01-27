@@ -1,0 +1,20 @@
+p = link_to 'Go Back', regions_path
+
+h1 Region Sightings
+table
+    tr
+        th
+            strong Species
+        th
+            strong Date
+        th
+            strong Latitude
+        th
+            strong Longitude
+    - @region.sightings.each do |sighting|
+        tr
+            td = sighting.animal.species
+            td = sighting.date.to_date
+            td = sighting.latitude
+            td = sighting.longitude
+            td = link_to 'View', sighting_path(sighting)

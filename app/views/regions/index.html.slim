@@ -1,0 +1,15 @@
+p = link_to 'Animals', animals_path
+
+h1 List of Regions
+p = link_to 'Add new region', new_region_path
+table
+    tr
+        th
+            strong Regions
+
+    - @regions.each do |region|
+        tr
+            td = region.name
+            td = link_to 'Sightings (' + region.sightings.count.to_s + ')', region_path(region)
+            td = link_to 'Edit', edit_region_path(region)
+            td = link_to 'Remove', region_path(region), method: :delete, data: { confirm: 'Are you sure?' }

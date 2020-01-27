@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body{  
+    font-family:Verdana;
+    font-size:15px;
+    color:rgb(0, 0, 0);
+    /* background:rgb(255, 255, 255); */
+    background: linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.5)), url(https://www.nationalgeographic.com/content/dam/magazine/rights-exempt/2019/12/african-parks/lion-drinking.ngsversion.1573552804799.adapt.1900.1.jpg);
+    background-attachment: fixed;
+}
+ 
+h1 {
+    font-size:40px;
+}
+
+h2 {
+    font-size:35px;
+}
+
+h3 {
+    font-size:22px;
+}
+
+table {
+    width: 65%;
+    text-align:center;
+    background:rgba(255, 255, 255, 0.651);
+}
+
+th {
+    height: 40px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+form {
+    width: 25%;
+    background-color: rgba(255, 255, 255, 0.651);
+}
